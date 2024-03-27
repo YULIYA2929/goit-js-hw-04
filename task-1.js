@@ -1,42 +1,25 @@
-const allUsers = [
-    {
-      name: "Moore Hensley",
-      friends: ["Sharron Pace"]
-    },
-    {
-      name: "Sharlene Bush",
-      friends: ["Briana Decker", "Sharron Pace"]
-    },
-    {
-      name: "Ross Vazquez",
-      friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"]
-    },
-    {
-      name: "Elma Head",
-      friends: ["Goldie Gentry", "Aisha Tran"]
-    },
-    {
-      name: "Carey Barr",
-      friends: ["Jordan Sampson", "Eddie Strong"]
-    },
-    {
-      name: "Blackburn Dotson",
-      friends: ["Jacklyn Lucas", "Linda Chapman"]
-    },
-    {
-      name: "Sheree Anthony",
-      friends: ["Goldie Gentry", "Briana Decker"]
-    }
-  ];
+function isEnoughCapacity(products, containerSize) {
+  let totalProducts = 0;
   
-  console.log(getUsersWithFriend(allUsers, "Briana Decker")); 
-  // [
-  //   {
-  //     name: "Sharlene Bush",
-  //     friends: ["Briana Decker", "Sharron Pace"]
-  //   },
-  //   {
-  //     name: "Sheree Anthony",
-  //     friends: ["Goldie Gentry", "Briana Decker"]
-  //   }
-  // ]
+  for (let product in products) {
+    totalProducts += products[product];
+  }
+  
+  return totalProducts <= containerSize;
+}
+
+console.log(
+  isEnoughCapacity({ apples: 2, grapes: 3, carrots: 1 }, 8)
+); // true
+
+console.log(
+isEnoughCapacity({ apples: 4, grapes: 6, lime: 16 }, 12)
+); // false
+
+console.log(
+  isEnoughCapacity({ apples: 1, lime: 5, tomatoes: 3 }, 14)
+); // true
+
+console.log(
+  isEnoughCapacity({ apples: 18, potatoes: 5, oranges: 2 }, 7)
+); // false
