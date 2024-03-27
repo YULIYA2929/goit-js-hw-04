@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>My HTML-page</title>
-    <script src="/js/"  ></script>
+    <script src="/js/" defer></script>
 </head>
 <body>
     <!-- Вміст сторінки -->
